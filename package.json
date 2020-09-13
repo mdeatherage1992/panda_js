@@ -1,0 +1,15 @@
+{
+  "name": "panda_api_js",
+  "version": "1.2.2",
+  "description": "JS Wrapper for PandaDoc API",
+  "main": "index.js",
+  "author": "Matt Deatherage",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "repository": { "url": "https://github.com/mdeatherage1992/panda_js",
+   "type": "git" },
+  "devDependencies": {}
+}
