@@ -58,10 +58,10 @@ var panda = new PandaDoc("", "")
  refresh_token = panda.refreshAccessToken({
   client_id: <YOUR_CLIENT_ID>,
   client_secret: <YOUR_CLIENT_SECRET>,
-  # your REFRESH TOKEN, NOT Access Token 
+  // your REFRESH TOKEN, NOT Access Token 
   refresh_token: <YOUR_REFRESH_TOKEN>,
   scope: <read, write, read+write>
- })
+ }).then(r => console.log(r))
  ```
  
  ## Instance Methods 
@@ -69,25 +69,25 @@ var panda = new PandaDoc("", "")
  ```javascript
  var panda = new PandaDoc(<YOUR_KEY>, <YOUR_KEY_TYPE>)
  
- # Documents Index (GET)
- panda.listDocuments({ <YOUR_PARAMS> })
+ // Documents Index (GET)
+ panda.listDocuments({ <YOUR_PARAMS> }).then(r => console.log(r))
  
- # Templates Index (GET)
- panda.listTemplates({ <YOUR_PARAMS> })
+ // Templates Index (GET)
+ panda.listTemplates({ <YOUR_PARAMS> }).then(r => console.log(r))
  
- # Document Details (GET)
- # Document ID Required
- panda.documentDetails({ <YOUR_PARAMS> }) 
+ // Document Details (GET)
+ // Document ID Required
+ panda.documentDetails({ <YOUR_PARAMS> }).then(r => console.log(r))
  
- # Document Status (GET)
- # Document ID Required
- panda.documentStatus({ <YOUR_PARAMS> }) 
+ // Document Status (GET)
+ // Document ID Required
+ panda.documentStatus({ <YOUR_PARAMS> }) .then(r => console.log(r))
  
- # Template Details (GET)
- # Template ID Required
- panda.templateDetails({ YOUR_PARAMS })
+ // Template Details (GET)
+ // Template ID Required
+ panda.templateDetails({ YOUR_PARAMS }).then(r => console.log(r))
  
- # Create Document (PDF) (POST)
+ // Create Document (PDF) (POST)
    var newDoc = panda.createDocumentFromPdf(
     # Valid File: File {<YOUR_FILE>} || params.files[0]
     file: <file_to_send>,
@@ -96,9 +96,9 @@ var panda = new PandaDoc("", "")
     fields: <YOUR_FIELDS>,
     metadata: <YOUR_META>,
     parse_form_fields: false
-  ).body
+  ).then(r => console.log(r))
  
- # Create Document (Template) (POST)
+ // Create Document (Template) (POST)
    var newDoc = panda.createDocumentFromTemplate({
     name: "New Doc From Template",
     template_uuid: "<YOUR_TEMPLATE_ID>",
@@ -106,43 +106,43 @@ var panda = new PandaDoc("", "")
     tokens: [{ name: "Client.FirstName", value: "Percy" }, { name: "Client.LastName", value: "Johnson" }],
     fields: <YOUR_FIELDS>,
     metadata: <YOUR_META>
-  })
+  }).then(r => console.log(r))
   
-  # Send Document (POST)
-  panda.sendDocument({ id: <YOUR_DOC_ID>, message: <YOUR_MESSAGE>, subject: <YOUR_SUBJECT>, silent: true || false })
+  // Send Document (POST)
+  panda.sendDocument({ id: <YOUR_DOC_ID>, message: <YOUR_MESSAGE>, subject: <YOUR_SUBJECT>, silent: true || false }).then(r => console.log(r))
   
-  # Create Document Session ID (POST)
-  panda.createDocumentLink({ id: <YOUR_DOC_ID>, recipient: <YOUR_RECIPIENT_EMAIL>, lifetime: 3600 })
+  // Create Document Session ID (POST)
+  panda.createDocumentLink({ id: <YOUR_DOC_ID>, recipient: <YOUR_RECIPIENT_EMAIL>, lifetime: 3600 }).then(r => console.log(r))
   
-  # Download Document (GET)
-  panda.downloadDocument({ id: <YOUR_DOC_ID> })
+  // Download Document (GET)
+  panda.downloadDocument({ id: <YOUR_DOC_ID> }).then(r => console.log(r))
   
-  # Download Protected Document (GET)
-  panda.downloadProtectedDocument({ id: <YOUR_DOC_ID> })
+  // Download Protected Document (GET)
+  panda.downloadProtectedDocument({ id: <YOUR_DOC_ID> }).then(r => console.log(r))
   
-  # Delete Document (DELETE)
-  panda.deleteDocument({ id: <YOUR_DOC_ID> })
+  // Delete Document (DELETE)
+  panda.deleteDocument({ id: <YOUR_DOC_ID> }).then(r => console.log(r))
   
-  # Delete Template (DELETE)
-  panda.deleteTemplate({ id: <YOUR_TEMP_ID> })
+  // Delete Template (DELETE)
+  panda.deleteTemplate({ id: <YOUR_TEMP_ID> }).then(r => console.log(r))
   
-  # Create Document Folder (POST)
-  panda.createDocumentFolder({ name: "<YOUR_NEW_FOLDER_NAME>" })
+  // Create Document Folder (POST)
+  panda.createDocumentFolder({ name: "<YOUR_NEW_FOLDER_NAME>" }).then(r => console.log(r))
   
-  # Create Template Folder (POST)
-  panda.createTemplateFolder({ name: "<YOUR_NEW_FOLDER_NAME>" })
+  // Create Template Folder (POST)
+  panda.createTemplateFolder({ name: "<YOUR_NEW_FOLDER_NAME>" }).then(r => console.log(r))
   
-  # List Template Folders (POST)
-  panda.listTemplateFolders({ <YOUR_PARAMS> })
+  // List Template Folders (POST)
+  panda.listTemplateFolders({ <YOUR_PARAMS> }).then(r => console.log(r))
   
-  # List Document Folders (POST)
-  panda.listDocumentFolders({ <YOUR_PARAMS> })
+  // List Document Folders (POST)
+  panda.listDocumentFolders({ <YOUR_PARAMS> }).then(r => console.log(r))
   
-  # Update Document Folder Name (PUT)
-  panda.updateDocumentFolder({ <YOUR_PARAMS> })
+  // Update Document Folder Name (PUT)
+  panda.updateDocumentFolder({ <YOUR_PARAMS> }).then(r => console.log(r))
   
-  # Update Template Folder Name (PUT)
-  panda_doc_api.updateTemplateFolder({ YOUR_PARAMS })
+  // Update Template Folder Name (PUT)
+  panda_doc_api.updateTemplateFolder({ YOUR_PARAMS }).then(r => console.log(r))
  ```
  
  # Questions / Concerns 
