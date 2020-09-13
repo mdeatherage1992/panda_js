@@ -1,4 +1,4 @@
-# PandaDoc API Yarn Package
+# PandaDoc API
 JS Wrapper for PandaDoc API
 
 # Installation 
