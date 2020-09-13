@@ -3,7 +3,6 @@ JS Wrapper for PandaDoc API
 
 # Installation 
 ```javascript
-# Gemfile
 yarn add panda_api_js
 ```
 
