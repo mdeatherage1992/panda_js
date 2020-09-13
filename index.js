@@ -126,6 +126,56 @@ class PandaDoc {
     .then(data => { return data });
   }
 
+  deleteDocument(params) {
+    var paramUrl = `https://api.pandadoc.com/public/v1/documents/${params.id}`
+    var that = this
+    return fetch(paramUrl, {
+      headers: that.generalHeaders(),
+      method: "DELETE"
+      }
+    )
+    .then(response => { return response.json() })
+    .then(data => { return data });
+  }
+
+  deleteTemplate(params) {
+    var paramUrl = `https://api.pandadoc.com/public/v1/templates/${params.id}`
+    var that = this
+    return fetch(paramUrl, {
+      headers: that.generalHeaders(),
+      method: "DELETE"
+      }
+    )
+    .then(response => { return response.json() })
+    .then(data => { return data });
+  }
+
+  updateDocumentFolder(params) {
+    var paramUrl = `https://api.pandadoc.com/public/v1/documents/folders/${params.id}`
+    var that = this
+    return fetch(paramUrl, {
+      headers: that.generalHeaders(),
+      method: "PUT",
+      body: JSON.stringify(params)
+      }
+    )
+    .then(response => { return response.json() })
+    .then(data => { return data });
+  }
+
+  updateTemplateFolder(params) {
+    var paramUrl = `https://api.pandadoc.com/public/v1/templates/folders/${params.id}`
+    var that = this
+    return fetch(paramUrl, {
+      headers: that.generalHeaders(),
+      method: "PUT",
+      body: JSON.stringify(params)
+      }
+    )
+    .then(response => { return response.json() })
+    .then(data => { return data });
+  }
+
   // ID only
   templateDetails(params) {
     var that = this
