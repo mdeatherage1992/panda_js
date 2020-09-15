@@ -13,7 +13,7 @@ yarn add panda_api_js
  2. Visit "My Applications" Tab 
  3. Create PandaDoc Application (Application Name, Application Author, Redirect URI)
  4. Upon completion, you will receive a Client ID and Client Secret
- 5. Install panda_api gem and instantiate the class 
+ 5. Install panda_api package and instantiate the class 
 ```javascript 
 var panda = new PandaDoc("", "")
 ```
